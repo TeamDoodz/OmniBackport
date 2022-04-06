@@ -1,0 +1,32 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "TeamDoodz"
+name = "OmniBackport"
+versionNumber = "0.2.1"
+description = "Successor to Act3Cards. Allows you to use non-act 1 cards in act 1."
+websiteUrl = ""
+containsNsfwContent = false
+
+[package.dependencies]
+API_dev-API = "2.0.2"
+TeamDoodz-TDLib = "1.2.0"
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./OmniBackport/bin/Debug/netstandard2.0/OmniBackport.dll"
+target = "./plugins/OmniBackport.dll"
+
+[[build.copy]]
+source = "./OmniBackport/assets"
+target = "./plugins/assets"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = []
+categories = []
