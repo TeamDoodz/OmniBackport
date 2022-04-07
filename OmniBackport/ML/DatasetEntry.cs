@@ -20,17 +20,18 @@ namespace OmniBackport.ML {
 			return $"{Health}	{Attack}	{PercentGimmick}	{PercentDefensive}	{PercentOffensive}	{PercentUtility}	{PercentNegative}	{PowerLevel}	{CostTier}	{(IsPart3Random? "1" : "0")}";
 		}
 		public static DatasetEntry FromCard(CardInfo card) {
-			DatasetEntry entry = new DatasetEntry {
-				Health = card.Health,
-				Attack = card.Attack,
-				PercentGimmick = card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Gimmick).Count / card.Abilities.Count,
-				PercentOffensive = card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Offensive).Count / card.Abilities.Count,
-				PercentDefensive = card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Defensive).Count / card.Abilities.Count,
-				PercentUtility = card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Utility).Count / card.Abilities.Count,
-				PowerLevel = card.PowerLevel,
-				CostTier = card.CostTier,
-				IsPart3Random = card.metaCategories.Contains(CardMetaCategory.Part3Random)
-			};
+			DatasetEntry entry = new DatasetEntry();
+			entry.Health = card.Health;
+			entry.Attack = card.Attack;
+			int count = card.Abilities.Count;
+			entry.PercentGimmick = count > 0 ? card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Gimmick).Count / count : 0f;
+			entry.PercentOffensive = count > 0 ? card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Offensive).Count / count : 0f;
+			entry.PercentDefensive = count > 0 ? card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Defensive).Count / count : 0f;
+			entry.PercentUtility = count > 0 ? card.Abilities.FindAll((x) => AbilityTypeUtils.GetType(x) == AbilityType.Utility).Count / count : 0f;
+			entry.PowerLevel = card.PowerLevel;
+			entry.CostTier = card.CostTier;
+			entry.IsPart3Random = card.metaCategories.Contains(CardMetaCategory.Part3Random);
+			if(entry.IsPart3Random) MainPlugin.logger.LogDebug("Card is part3random");
 			return entry;
 		}
 	}

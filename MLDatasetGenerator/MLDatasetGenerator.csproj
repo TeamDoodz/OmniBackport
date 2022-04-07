@@ -17,6 +17,9 @@
     <Reference Include="InscryptionAPI">
       <HintPath>lib\InscryptionAPI.dll</HintPath>
     </Reference>
+    <Reference Include="OmniBackport">
+      <HintPath>..\OmniBackport\bin\Debug\netstandard2.0\OmniBackport.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>lib\Sirenix.Serialization.dll</HintPath>
     </Reference>
