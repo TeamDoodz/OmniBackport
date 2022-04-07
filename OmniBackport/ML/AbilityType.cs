@@ -5,7 +5,7 @@ using System.Text;
 namespace OmniBackport.ML {
 	public enum AbilityType {
 		Gimmick,
-		Offenisve,
+		Offensive,
 		Defensive,
 		Utility,
 		Negative

@@ -80,7 +80,7 @@ namespace OmniBackport.ML {
 		};
 		public static AbilityType GetType(Ability ability) {
 			if(GimmickAbilities.Contains(ability)) return AbilityType.Gimmick;
-			if(OffensiveAbilities.Contains(ability)) return AbilityType.Offenisve;
+			if(OffensiveAbilities.Contains(ability)) return AbilityType.Offensive;
 			if(DefensiveAbilities.Contains(ability)) return AbilityType.Defensive;
 			if(UtilityAbilities.Contains(ability)) return AbilityType.Utility;
 			MainPlugin.logger.LogWarning($"Could not get ability type for {ability}");
