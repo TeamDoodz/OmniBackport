@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "TeamDoodz"
 name = "OmniBackport"
-versionNumber = "0.2.1"
+versionNumber = "0.2.2"
 description = "Successor to Act3Cards. Allows you to use non-act 1 cards in act 1."
 websiteUrl = ""
 containsNsfwContent = false

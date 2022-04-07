@@ -27,7 +27,7 @@ namespace OmniBackport {
 
 		internal const string GUID = "io.github.TeamDoodz." + Name;
 		internal const string Name = "OmniBackport";
-		internal const string Version = "0.2.1";
+		internal const string Version = "0.2.2";
 
 		internal static ManualLogSource logger;
 		internal static AssetManager assets;
