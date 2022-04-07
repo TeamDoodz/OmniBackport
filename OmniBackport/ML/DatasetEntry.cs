@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MLDatasetGenerator {
+namespace OmniBackport.ML {
 	public struct DatasetEntry {
 		public int Health;
 		public int Attack;
