@@ -69,7 +69,7 @@ namespace OmniBackport.Abilities {
 
 			if(!resolved) {
 				yield return new WaitForSeconds(0.4f);
-				if(ResourcesManager.Instance.gems.Contains(GemType.Blue)) {
+				if(ResourcesManager.Instance.gems.Contains(GemType.Blue) && CardDrawPiles3D.Instance.SidePile.NumCards > 0) {
 					MainPlugin.logger.LogInfo("Drawing from side deck");
 					if(Singleton<ViewManager>.Instance.CurrentView != View.Default) {
 						yield return new WaitForSeconds(0.2f);
