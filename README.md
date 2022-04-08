@@ -29,6 +29,9 @@ If its owner controls an orange gem, all cards with the Gemified sigil gain +1 p
 Choose from any card of yours (that does not already have the Overclock sigil), and it will gain +2 attack and the Overclock sigil.
 Cards with the Overclock sigil will be removed from your deck upon perishing.
 
+## Bug reporting/feature requests
+To report a bug/request a feature, visit https://github.com/TeamDoodz/OmniBackport and go to the Issues tab.
+
 ## Credits
 
 Icon for the Overclock node provided by [Freepik - Flaticon](https://www.flaticon.com/free-icons/energy). <br/>

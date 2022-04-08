@@ -6,7 +6,7 @@ namespace = "TeamDoodz"
 name = "OmniBackport"
 versionNumber = "0.2.2"
 description = "Successor to Act3Cards. Allows you to use non-act 1 cards in act 1."
-websiteUrl = ""
+websiteUrl = "https://github.com/TeamDoodz/OmniBackport"
 containsNsfwContent = false
 
 [package.dependencies]
