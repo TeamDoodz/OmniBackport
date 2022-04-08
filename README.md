@@ -42,6 +42,7 @@ Thanks to Aaron from the Inscryption Modding Discord for helping with some Harmo
 ## 0.2.2
 - Fixed an error that would occur if a gemified card tried to draw from the side deck when the side deck was empty.
 - Sort-of fixed the Looter sigil; it animates weirdly now but it will actually update the card piles. It will also now draw from the side deck if the main deck is empty.
+- The Gift Bearer sigil can now give you any card added by OmniBackport. This is configurable.
 
 ## 0.2.1
 - Dialogue for the Overclock and Gemify nodes will no longer repeat after entering the node more than once.

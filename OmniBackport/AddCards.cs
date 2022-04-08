@@ -128,6 +128,7 @@ namespace OmniBackport {
 			return result;
 		}
 
+		private static BasicConfigHelper<bool> AllPart3Random = new BasicConfigHelper<bool>(MainPlugin.cfg, nameof(AllPart3Random), "All cards added by OmniBackport can be dropped from the Gift Bearer sigil.");
 		private static BasicConfigHelper<bool> SideDeckFindNormally = new BasicConfigHelper<bool>(MainPlugin.cfg, nameof(SideDeckFindNormally), "Allow for side deck cards (squrriel, skeleton, etc) to appear in choice nodes/trader offers.", false, "SideDecks");
 		private static BasicConfigHelper<bool> UseCardList = new BasicConfigHelper<bool>(MainPlugin.cfg, nameof(UseCardList), "If this is true, the mod will look for a \"cards.csv\" file that contains a list of act 2/3 cards. Turning this on adds some overhead, so keep it off unless you want to modify the list. If you want to reset the list to factory settings, just delete it.", false);
 		public static void AddAllCards(bool IncludeModded) {
@@ -272,7 +273,7 @@ namespace OmniBackport {
 				gencard.evolveParams = original.evolveParams;
 
 				gencard.metaCategories = new List<CardMetaCategory>();
-				if(original.metaCategories.Contains(CardMetaCategory.Part3Random)) gencard.metaCategories.Add(CardMetaCategory.Part3Random);
+				if(original.metaCategories.Contains(CardMetaCategory.Part3Random) || AllPart3Random.GetValue()) gencard.metaCategories.Add(CardMetaCategory.Part3Random);
 
 				if(makeObtainable) gencard.metaCategories.AddRange(GetCardMetas(original.metaCategories.Contains(CardMetaCategory.Rare)));
 				if(makeSideDeck) {
