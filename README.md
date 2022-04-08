@@ -39,12 +39,12 @@ Thanks to Aaron from the Inscryption Modding Discord for helping with some Harmo
 
 ## Changelog
 
-## 0.2.2
+### 0.2.2
 - Fixed an error that would occur if a gemified card tried to draw from the side deck when the side deck was empty.
 - Sort-of fixed the Looter sigil; it animates weirdly now but it will actually update the card piles. It will also now draw from the side deck if the main deck is empty.
 - The Gift Bearer sigil can now give you any card added by OmniBackport. This is configurable.
 
-## 0.2.1
+### 0.2.1
 - Dialogue for the Overclock and Gemify nodes will no longer repeat after entering the node more than once.
 - Slightly improved the visuals of the Overclock and Gemify nodes.
 - Fixed an issue where the fire animation during the Campfire node would not appear.
@@ -52,7 +52,7 @@ Thanks to Aaron from the Inscryption Modding Discord for helping with some Harmo
 - Fixed the Bloody Gems challenge not changing the background texture of gems cards to the normal texture.
 - View is no longer locked during Overclock and Gemify nodes.
 
-## 0.2.0
+### 0.2.0
 - Added the Overclock node.
 - Added the Gemification node.
 - Added a new secret mechanic. (Hint: It has something to do with the Bone Lord...)
