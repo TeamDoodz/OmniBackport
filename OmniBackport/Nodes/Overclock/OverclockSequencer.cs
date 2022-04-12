@@ -29,15 +29,8 @@ namespace OmniBackport.Nodes.Overclock {
 			InteractionCursor.Instance.SetEnabled(true);
 
 			// This clears the fire animation component from the slot.
-			if(selectionSlot.specificRenderers.Count > 1) {
-				selectionSlot.specificRenderers.ForEach((x) => x.enabled = false);
-			}
-
-			if(!SaveManager.SaveFile.progressionData.learnedMechanics.Contains(OverclockMechanic)) {
-				yield return TextDisplayer.Instance.ShowUntilInput("You stumbled across a derelict [c:bR]military factory[c:], well-hidden by the forestry and rubble.");
-			}
-
-			yield return new WaitForSeconds(0.5f);
+			selectionSlot.specificRenderers[1].enabled = false;
+			MainPlugin.logger.LogDebug(selectionSlot.specificRenderers.Count);
 
 			selectionSlot.gameObject.SetActive(true);
 			selectionSlot.RevealAndEnable();
@@ -45,6 +38,8 @@ namespace OmniBackport.Nodes.Overclock {
 			selectionSlot.CursorSelectStarted = (Action<MainInputInteractable>)Delegate.Combine(selectionSlot.CursorSelectStarted,new Action<MainInputInteractable>(OnSlotSelected));
 
 			if(!SaveManager.SaveFile.progressionData.learnedMechanics.Contains(OverclockMechanic)) {
+				yield return TextDisplayer.Instance.ShowUntilInput("You stumbled across a derelict [c:bR]military factory[c:], well-hidden by the forestry and rubble.");
+
 				yield return new WaitForSeconds(0.5f);
 
 				yield return TextDisplayer.Instance.ShowUntilInput("After investigating the site, you found that a part of the assembly line was still intact,", letterAnimation: TextDisplayer.LetterAnimation.WavyJitter);
@@ -105,6 +100,7 @@ namespace OmniBackport.Nodes.Overclock {
 			selectionSlot.gameObject.SetActive(false);
 			yield return pile.DestroyCards();
 			confirmStone.SetShown(false, false);
+			selectionSlot.specificRenderers[1].enabled = true;
 
 			yield return new WaitForSeconds(0.1f);
 			GameFlowManager.Instance.TransitionToGameState(GameState.Map);

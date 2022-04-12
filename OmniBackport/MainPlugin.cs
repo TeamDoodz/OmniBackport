@@ -126,5 +126,14 @@ namespace OmniBackport {
 				nature.ValidFor.Add(PackInfo.PackMetacategory.LeshyPack);
 			}
 		}
+
+		private void Update() {
+			if(Input.GetKeyDown(KeyCode.G)) {
+				GameFlowManager.Instance.TransitionToGameState(GameState.SpecialCardSequence, new Nodes.Gemify.GemifyNodeData());
+			}
+			if(Input.GetKeyDown(KeyCode.C)) {
+				GameFlowManager.Instance.TransitionToGameState(GameState.SpecialCardSequence, new CardStatBoostNodeData());
+			}
+		}
 	}
 }
