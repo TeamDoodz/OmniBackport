@@ -40,6 +40,7 @@ Thanks to Aaron from the Inscryption Modding Discord for helping with some Harmo
 ## Changelog
 
 ### 0.2.2
+- Removed the secret mechanic because it was too buggy.
 - Fixed card slots for the new nodes not rendering
 - Fixed an error that would occur if a gemified card tried to draw from the side deck when the side deck was empty.
 - Sort-of fixed the Looter sigil; it animates weirdly now but it will actually update the card piles. It will also now draw from the side deck if the main deck is empty.

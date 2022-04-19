@@ -13,7 +13,7 @@ using TDLib.Collections;
 using UnityEngine;
 
 namespace OmniBackport.Patchers {
-	[HarmonyPatch]
+	//[HarmonyPatch]
 	public static class CorpseCardsPatch {
 		public const string CorpseModID = "CORPSE_CARD";
 		public static List<KeyValuePair<string, CardModificationInfo>> BoneLordCards = null;
